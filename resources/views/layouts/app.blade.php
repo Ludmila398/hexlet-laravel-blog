@@ -11,6 +11,13 @@
     </head>
     <body>
         <div class="container mt-4">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/articles">Articles</a>
+
+            {{-- или ссылки на страницы : <a href="{{ route('article_categories.index') }}">Категории статей</a> --}}
+
+
             <h1>@yield('header')</h1>
             <div>
                 @yield('content')
@@ -18,3 +25,4 @@
         </div>
     </body>
 </html>
+
