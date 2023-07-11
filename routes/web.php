@@ -30,6 +30,12 @@ Route::get('about', [PageController::class, 'about']);
 Route::get('articles', [ArticleController::class, 'index'])
   ->name('articles.index'); // имя маршрута, нужно для того, чтобы не создавать ссылки руками -resources/views/article/index.blade.php
 
+Route::get('articles/create', 'App\Http\Controllers\ArticleController@create')
+  ->name('articles.create');
+
+Route::post('articles', 'App\Http\Controllers\ArticleController@store')
+  ->name('articles.store');  
+
 # id – параметр, который зависит от конкретной статьи
 # Фигурные скобки нужны для описания параметров маршрута
 Route::get('articles/{id}', [ArticleController::class, 'show'])
